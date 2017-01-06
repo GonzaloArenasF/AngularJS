@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+
+<head>
+    <script src="angular.min.js"></script>
+</head>
+
+<body ng-app="myapp">
+
+
+<div ng-controller="HelloController" >
+
+    <h2>Hola {{helloTo.title}} !</h2>
+    <input ng-model="helloTo.title" value="{{helloTo.title}}" />
+
+	
+	<p>
+		<input type="number" ng-model="num1" value="1" />
+		+
+	    <input type="number" ng-model="num2" value="2" />
+		=
+	    {{num1+num2}}
+	</p>
+
+	<p>
+		<button ng-click="ver();">Ver t&iacute;tulo</button>
+	</p>
+    
+
+</div>
+
+
+<script>
+
+angular.module("myapp", [])
+	.controller("HelloController", function($scope) {
+
+	    $scope.helloTo = {};
+	    $scope.helloTo.title = "MUNDO, AngularJS";
+
+	    $scope.ver = function () {
+	    	alert($scope.helloTo.title);
+	    }
+
+	} );
+
+</script>
+
+
+
+</body>
+
+</html>

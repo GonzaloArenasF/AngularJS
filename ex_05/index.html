@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="myapp">
+<head>
+  <meta charset="utf-8">
+
+  <title>Con bootstrap</title>
+
+  <!-- Bootstrap core CSS -->
+  <link href="css/bootstrap.min.css" rel="stylesheet">
+
+  <!-- JS -->
+  <script src="js/angular.min.js"></script>
+  <script src="js/angular-route.min.js"></script>
+  <script src="app.js"></script>
+</head>
+
+<body>
+    <div>
+        <ul class="nav nav-tabs">
+          <li role="presentation"><a href="#/sub1">SUB 1</a></li>
+          <li role="presentation"><a href="#/sub2">SUB 2</a></li>
+        </ul>
+          <div  ng-view></div>
+
+    </div>
+
+</body>
+</html>

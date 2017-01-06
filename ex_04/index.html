@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="myapp">
+<head>
+  <meta charset="utf-8">
+
+  <title>Con bootstrap</title>
+
+  <!-- Bootstrap core CSS -->
+  <link href="css/bootstrap.min.css" rel="stylesheet">
+
+  <!-- JS -->
+  <script src="js/angular.min.js"></script>
+  <script src="app.js"></script>
+</head>
+
+<body>
+
+    <div ng-controller="MainController">
+
+        <div class="panel panel-primary">
+            <div class="panel-heading">
+                <h3 class="panel-title">Uso de servicios</h3>
+            </div>
+            <div class="panel-body">
+                <form class="form-inline">
+                  <div class="form-group">
+                    <label class="sr-only" for="exampleInputAmount">N</label>
+                    <div class="input-group">
+                      <div class="input-group-addon">#</div>
+                      <input type="number" class="form-control" ng-model="number" />
+                    </div>
+                  </div>
+                  <button class="btn btn-primary" ng-click="doSquare()">X<sup>2</sup></button>
+                  <button class="btn btn-success" ng-click="doCube()">X<sup>3</sup></button>
+                </form>
+            </div>
+        </div>
+        <div>Resp: {{answer}}</div>
+
+        <div>Ope:
+        <pre>
+            2x2=4
+            2x2x2=8
+            ...
+        </pre>
+        </div>
+    </div>
+
+</body>
+</html>
