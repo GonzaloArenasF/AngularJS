@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="myapp">
+<head>
+  <meta charset="utf-8">
+
+  <title>Con bootstrap</title>
+
+  <!-- Bootstrap core CSS -->
+  <link href="css/bootstrap.min.css" rel="stylesheet">
+  <link href="whirl.css" rel="stylesheet">
+  <!-- JS -->
+  <script src="js/jquery.min.js"></script>
+  <script src="js/angular.min.js"></script>
+  <script src="app.js"></script>
+</head>
+
+<body>
+    <div ng-controller="MainController">
+
+        <div class="panel panel-primary">
+            <div class="panel-heading">
+                <h3 class="panel-title">Flickr</h3>
+            </div>
+            <div class="panel-body">
+                <form class="form-inline">
+                  <button id="btn_fetch" ng-disabled="btnEst" class="btn btn-primary" ng-click="fetchPhotos()" >Fetch</button>
+                  <button id="btn_limpiar" ng-disabled="btnEst" class="btn btn-warning" ng-click="limpiarPhotos()" >Limpiar</button>
+                </form>
+            </div>
+        </div>
+        <div>EJEMPLO::::  {{test | cleandots | cleancommas}}
+            <table id="tab_res" class="table table-bordered table-striped">
+                <tr ng-show="heaEst">
+                    <td><font size=5>Autor</font></td>
+                    <td><font size=5>Img</font></td>
+                </tr>
+                <tr ng-repeat="item in feeds.items"  ng-if="$index<=4">
+                    <td>{{item.author}}</td>
+                    <td><img style="width:100px" ng-src="{{item.media.m}}"></td>
+                </tr>
+            </table>
+        </div>
+    </div>
+    </div>
+
+</body>
+</html>

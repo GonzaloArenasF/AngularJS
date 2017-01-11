@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="myapp">
+<head>
+  <meta charset="utf-8">
+
+  <title>Angularjs</title>
+
+  <!-- Bootstrap core CSS -->
+  <link href="css/bootstrap.min.css" rel="stylesheet">
+
+  <!-- JS -->
+  <script src="js/angular.min.js"></script>
+  <script src="app.js"></script>
+</head>
+
+<body>
+
+    <div ng-controller="MainController">
+
+      <div class="panel panel-info">
+        <div class="panel-heading">
+          Plantilla interna
+        </div>
+        <div class="panel-body">
+            <div ngh-template-dir>
+              <strong>Todo esto desaparece</strong>
+              <div>
+                No existe
+              </div>
+            </div>
+        </div>
+      </div>
+
+      <div class="panel panel-info">
+        <div class="panel-heading">
+          Replace HTML Directiva
+        </div>
+        <div class="panel-body">
+            <span ngh-replace-dir  style="font-weight: bold; color: blue;" class="spanBackground">
+             <strong>Todo esto desaparece</strong><br />
+             <em>Todo esto desaparece</em>
+           </span>
+        </div>
+      </div>
+
+      <div class="panel panel-info">
+        <div class="panel-heading">
+          Directive restricción E
+        </div>
+        <div class="panel-body">
+              <element-dir></element-dir>
+        </div>
+      </div>
+
+      <div class="panel panel-info">
+        <div class="panel-heading">
+          Directive restricción A
+        </div>
+        <div class="panel-body">
+              <div attribute-dir="valor por parámetro" />
+        </div>
+      </div>
+
+      <div class="panel panel-info">
+        <div class="panel-heading">
+          Directive con controlador - aislada
+        </div>
+        <div class="panel-body">
+              <div with-control>
+        </div>
+      </div>
+      </div>
+
+      <div class="panel panel-info">
+        <div class="panel-heading">
+          Directive con atributos: @ & =
+        </div>
+        <div class="panel-body">
+            <div with-attrs titulo="Listado" datasource="customers" add="addCustomer"></div>
+        </div>
+      </div>
+
+      <div class="panel panel-info">
+        <div class="panel-heading">
+          Primera Directiva: = Un parámetro como objeto
+        </div>
+        <div class="panel-body">
+            <my-lista datos="arr" tex="Texto por parámetros" ></my-lista>
+        </div>
+      </div>
+
+    </div>
+
+    <hr>
+
+</body>
+</html>
