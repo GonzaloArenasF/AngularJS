@@ -17,15 +17,19 @@
 </div>
 
 <div ng-controller="OtroController" >
-{{lista}}
+
+	{{lista}}
+
     <h2>Lista, <a href="" ng-click="add()">Add</a></h2>
     <ul ng-repeat="item in lista">
-        <li>{{$index}}{{item.nombre}}</li>
+        <li>
+        	{{$index}} - {{item.nombre}}
+        	<input type="text" ng-model="item.x" />
+        	<button ng-click="eliminar($index);">Eliminar</button>
+        </li>
     </ul>
   
 </div>
-
-
 
 
 </body>

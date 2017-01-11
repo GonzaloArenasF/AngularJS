@@ -11,7 +11,7 @@ angular.module("myapp", [])
 .controller("OtroController", function($scope) {
     $scope.add=function() {
         $scope.lista.push({nombre: 'Otro'})
-    }
+    };
     
     $scope.persona = {
         id: 4,
@@ -30,4 +30,9 @@ angular.module("myapp", [])
             nombre: "Elemento #4"
         }
     ];
+
+    $scope.eliminar = function (indice) {
+        $scope.lista.splice(indice, 1);
+    };
+
 } );

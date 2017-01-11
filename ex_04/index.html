@@ -26,16 +26,21 @@
                   <div class="form-group">
                     <label class="sr-only" for="exampleInputAmount">N</label>
                     <div class="input-group">
-                      <div class="input-group-addon">#</div>
+                      <div class="input-group-addon">X</div>
                       <input type="number" class="form-control" ng-model="number" />
+                    </div>
+                    <div class="input-group">
+                      <div class="input-group-addon">Y</div>
+                      <input type="number" class="form-control" ng-model="exp" />
                     </div>
                   </div>
                   <button class="btn btn-primary" ng-click="doSquare()">X<sup>2</sup></button>
                   <button class="btn btn-success" ng-click="doCube()">X<sup>3</sup></button>
+                  <button class="btn btn-warning" ng-click="doExp()">X<sup>y</sup></button>
                 </form>
             </div>
         </div>
-        <div>Resp: {{answer}}</div>
+        <div>Resp: {{answer | formatoNumerico}}</div>
 
         <div>Ope:
         <pre>

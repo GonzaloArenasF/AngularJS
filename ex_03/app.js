@@ -1,6 +1,9 @@
 var myApp = angular.module("myapp", []);
 
 myApp.controller("MiLista", function ($scope)  {
+
+	$scope.limite = 5;
+	$scope.verMas = 'Ver más';
     
     $scope.people = [
 		{"name":"Srinivasarao","Designation":"software Engineer"},
@@ -14,5 +17,24 @@ myApp.controller("MiLista", function ($scope)  {
 		{"name":"Nagarjuna","Designation":"Press"},
 		{"name":"Harsha","Designation":"Advocate"},
 		{"name":"Ashok","Designation":"Team Lead"}
-	]
+	];
+
+	//jsonfake /post
+
+	$scope.ver = function() {
+
+		if ($scope.limit == 5) {
+
+			$scope.verMas = 'Ver menos';
+			$scope.limite = $scope.people.length;
+
+		} else {
+
+			$scope.verMas = 'Ver más';
+			$scope.limite = 5;
+
+		};
+
+	};
+
 } );

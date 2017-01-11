@@ -32,20 +32,24 @@
         </form>
 
         <hr>
-        <div class="alert alert-success" role="alert"> Registros: <b>{{people.length}}</b></div>
+        <div class="alert alert-success" role="alert"> 
+          Registros: <b>{{limite}} de {{people.length}}</b>
+          <a href="#" ng-click="verMas();">{{verMas}}</a>
+        </div>
+        
 		<table class="table table-bordered table-striped">
 			<tr>
-                <td>#</td>
+        <td>#</td>
 				<td><font size=5>Nombre</font></td>
 				<td><font size=5>Puesto</font></td>
 			</tr>
-			<tr ng-repeat="item in people | filter:searchText" ng-if="$index<=4">
-                
-                <td>{{$index + 1}}</td>
+			<tr ng-repeat="item in people | filter:searchText" ng-if="$index<=limite">
+        <td>{{$index + 1}}</td>
 				<td>{{item.name}}</td>
 				<td>{{item.Designation}}</td>
 			</tr>
 		</table>
+
 	</div>
 
 </body>
