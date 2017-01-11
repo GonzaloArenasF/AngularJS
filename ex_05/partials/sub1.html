@@ -1,2 +1,15 @@
 
 <div class="alert alert-danger" role="alert"><h2>Estamos en sub1, valor: {{variable}}</h2></div>
+
+<table class="table table-bordered table-striped">
+	<tr>
+		<td>#</td>
+		<td><font size=5>Title</font></td>
+		<td><font size=5>Body</font></td>
+	</tr>
+	<tr ng-repeat="post in posts">
+		<td>{{ post.id }}</td>
+		<td>{{ post.title }}</td>
+		<td>{{ post.body }}</td>
+	</tr>
+</table>

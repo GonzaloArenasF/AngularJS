@@ -1,2 +1,15 @@
 
 <div class="alert alert-success" role="alert"><h2>Estamos en sub2</h2></div>
+
+<table class="table table-bordered table-striped">
+	<tr>
+		<td>#</td>
+		<td><font size=5>Name</font></td>
+		<td><font size=5>Body</font></td>
+	</tr>
+	<tr ng-repeat="comment in comments">
+		<td>{{ comment.id }}</td>
+		<td>{{ comment.name }}</td>
+		<td>{{ comment.body }}</td>
+	</tr>
+</table>

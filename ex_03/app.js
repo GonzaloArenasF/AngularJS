@@ -1,6 +1,6 @@
 var myApp = angular.module("myapp", []);
 
-myApp.controller("MiLista", function ($scope)  {
+myApp.controller("MiLista", function ($scope, $http)  {
 
 	$scope.limite = 5;
 	$scope.verMas = 'Ver más';
@@ -36,5 +36,15 @@ myApp.controller("MiLista", function ($scope)  {
 		};
 
 	};
+
+	$scope.getServicio = function() {
+
+        $http.get("https://jsonplaceholder.typicode.com/posts/1/comments")
+            .then(function(response) {
+                console.debug(response);
+                $scope.people = response.data;
+        });
+
+    }
 
 } );

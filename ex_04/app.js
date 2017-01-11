@@ -9,6 +9,7 @@ myApp.service('MathService', function() {
 
 });
 
+
 myApp.service('CalculatorService', function(MathService){
     
     this.square = function(a) {
@@ -27,7 +28,7 @@ myApp.service('CalculatorService', function(MathService){
 
 
 
-myApp.controller('MainController', function($scope, CalculatorService) {
+myApp.controller('MainController', function($scope, CalculatorService, $http) {
     
     $scope.doSquare = function() {
         $scope.answer = CalculatorService.square($scope.number);
