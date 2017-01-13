@@ -14,6 +14,29 @@ myApp.filter('cleancommas', function() {
     };
 });
 
+myApp.directive('fotosDir', function () {
+
+    var html  = '<table id="tab_res" class="table table-bordered table-striped">';
+        html += '   <tr>';
+        html += '       <td><font size=5>Autor</font></td>';
+        html += '       <td><font size=5>Img</font></td>';
+        html += '   </tr>';
+        html += '    <tr ng-repeat="item in photos.items">';
+        html += '       <td>{{ item.author }}</td>';
+        html += '    	<td><img style="width:100px" ng-src="{{ item.media.m }}"></td>';
+        html += '    </tr>';
+        html += '</table>';
+
+
+    return {
+        restrict: 'E',
+        scope: {
+            photos: '='
+        },
+        template: html
+    };
+});
+
 myApp.controller("MainController", function($scope){
 
 	$scope.test = "hola mundo , 111, mi rut: 16.555.444-3";
@@ -21,7 +44,6 @@ myApp.controller("MainController", function($scope){
 	$scope.name="hola";
 
 	$scope.btnEst = false;
-	$scope.heaEst = true;
 
 	$scope.fetchPhotos = function(){
 	    $.ajax({
@@ -31,7 +53,6 @@ myApp.controller("MainController", function($scope){
 	        beforeSend: function() {
 	        	$("table#tab_res").addClass('whirl');
 	        	$scope.btnEst = true;
-	        	$scope.heaEst = false;
 	        },
 	        success: function(feeds){
 				$scope.feeds = feeds;
@@ -39,7 +60,6 @@ myApp.controller("MainController", function($scope){
 				$("table#tab_res").removeClass('whirl');
 
 				$scope.btnEst = false;
-				$scope.heaEst = true;
 	            
 	            $scope.$apply(function(){
 	            	/* Actualiza el $scope */

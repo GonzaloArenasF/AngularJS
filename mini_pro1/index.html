@@ -29,16 +29,11 @@
             </div>
         </div>
         <div>EJEMPLO::::  {{test | cleandots | cleancommas}}
-            <table id="tab_res" class="table table-bordered table-striped">
-                <tr ng-show="heaEst">
-                    <td><font size=5>Autor</font></td>
-                    <td><font size=5>Img</font></td>
-                </tr>
-                <tr ng-repeat="item in feeds.items"  ng-if="$index<=4">
-                    <td>{{item.author}}</td>
-                    <td><img style="width:100px" ng-src="{{item.media.m}}"></td>
-                </tr>
-            </table>
+            
+        </div>
+        <div>
+          <h2>Directiva Flickr</h2>
+          <fotos-dir photos="feeds" />
         </div>
     </div>
     </div>
