@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>AngularJS</title>
+        <link rel="stylesheet" href = "bootstrap.min.css">
+        <script type="text/javascript" src="angular.min.js"></script>
+        <script type="text/javascript" src="angular-resource.js"></script>
+        <script type="text/javascript" src="app.js"></script>
+    </head>
+
+    <body ng-app="myApp" ng-controller="mainCtrl">
+        <table class="table table-bordered">
+
+            <thead>
+            	<tr>
+                    <th></th>
+            		<th>#</th>
+            		<th>UserID</th>
+            		<th>Título</th>
+                    <th>Nº Letras</th>
+                    <th>&nbsp;</th>
+            	</tr>
+                <tr>
+                    <th colspan="4"><input ng-model="search.title" class="form-control" placeholder="global search ..." type="text"/></th>
+                </tr>
+            </thead>
+            <tbody ng-repeat="x in lista | filter:search">
+                <tr>
+                    <!-- Creamos las columnas a partir de los datos de la variable
+                    x.-->
+                    <td>
+                        <button type="button" class="btn btn-sm btn-primary" ng-click=verComentarios(x);>
+                            <span ng-if="!x.comentarios">+</span>
+                            <span ng-if="x.comentarios">-</span>
+                        </button>
+                    </td>
+                    <td>{{ x.id}}</td>
+                    <td>{{ x.userId}}</td>
+                    <td>
+                        <span ng-if="x.editar">{{ x.title | uppercase}}</span>
+                        <input type="text" ng-model="x.title" value="{{ x.title | uppercase}}" ng-if="x.guardar" class="form-control" />
+                    </td>
+                    <td>
+                        <span ng-if="x.title.length < 40">{{ x.title.length }}</span>
+                        <span ng-if="x.title.length >= 40" style="color: red;">{{ x.title.length }}</span>
+                    </td>
+                    <td>
+                        <button type="button" ng-click="guardarItem(x)" class="btn btn-sm btn-success" ng-if="x.guardar">Guardar</button>
+                        <button type="button" ng-click="editarItem(x)" class="btn btn-sm btn-warning" ng-if="x.editar">Editar</button>
+                        <button type="button" ng-click="removeItem(x)" class="btn btn-sm btn-danger" ng-if="x.eliminar">x</button>
+                    </td>
+                </tr>
+                <tr ng-if="x.comentarios">
+                    <td colspan="6">
+                        
+                        <table class="table table-bordered">
+                            <thead>
+                                <tr>
+                                    <th>#</th>
+                                    <th>Nombre</th>
+                                    <th>Mail</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr ng-repeat="c in x.comments">
+                                    <td>{{ $index }}</td>
+                                    <td>{{ c.name }}</td>
+                                    <td>{{ c.email }}</td>
+                                </tr>
+                            </tbody>
+                        </table>
+
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </body>
+</html>

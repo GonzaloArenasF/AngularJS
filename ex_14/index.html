@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="myapp">
+<head>
+  <meta charset="utf-8">
+
+  <title>Con bootstrap</title>
+<style>
+.error {
+  border-color: red;
+}
+
+.warning {
+  border-color: yellow;
+}
+</style>
+  <!-- Bootstrap core CSS -->
+  <link href="css/bootstrap.min.css" rel="stylesheet">
+
+  <!-- JS -->
+  <script src="js/angular.min.js"></script>
+
+  <script src="app.js"></script>
+</head>
+
+<body>
+<!-- valid type (text, number, url, email, radio, checkbox) -->
+    <div ng-controller="MainController">
+
+        <form name="miFormulario" novalidate >
+           Nombre:<input type="text" ng-model="formData.nombre" name="nombre" ng-maxlength="50" ng-minlength="3" ng-required="requeridoNombre" ng-pattern="patternNombre" >
+           <br>
+           Correo eletronico:<input type="email" ng-model="formData.correo" name="correo" >
+           <br>
+           Edad:<input type="number" ng-model="formData.edad" name="edad" min="18" max="99" >
+           <br>
+           Sitio web:<input required type="url" ng-model="formData.sitioweb" name="sitioweb"  >
+           <span ng-show="miFormulario.$dirty && miFormulario.sitioweb.$invalid">Requerida</span>
+         </form>
+
+         <hr />
+         
+         <form name="pruebaForm" novalidate >
+    
+            <div class="form-group {{ pruebaForm.nom.$invalid ? 'has-error' : '' }}">
+              <input type="text" ng-model="formData.nom"class="form-control" name="nom" placeholder="Nombre" ng-required="true" ng-maxlength="50" ng-minlength="3">
+            </div>
+            <div class="form-group {{ pruebaForm.correo.$invalid ? 'has-error' : '' }}">
+              <input type="text" ng-model="formData.correo"class="form-control" name="correo" placeholder="Email" ng-required="true" ng-maxlength="50" ng-minlength="3">
+            </div>
+            ----- {{ pruebaForm.nom.$error }}
+            <br />
+            +++ {{ pruebaForm.$valid }}
+         </form>
+         
+           <HR>
+           TEST Nombre:  {{miFormulario.nombre.$error}}
+           <HR>
+           <br>
+           miFormulario.$pristine:  {{miFormulario.$pristine}}
+           <br>
+           miFormulario.$dirty:  {{miFormulario.$dirty}}
+           miFormulario.$valid:  {{miFormulario.$valid}}
+
+           <br>
+           miFormulario.nombre.$error.pattern:  {{miFormulario.nombre.$error.pattern}}
+           <br>
+           miFormulario.nombre.$error.required:  {{miFormulario.nombre.$error.required}}
+           <br>
+           miFormulario.nombre.$error.minlength:  {{miFormulario.nombre.$error.minlength}}
+           <br>
+           miFormulario.nombre.$error.maxlength:  {{miFormulario.nombre.$error.maxlength}}
+           <br>
+           miFormulario.correo.$error.email:  {{miFormulario.correo.$error.email}}
+           <br>
+           miFormulario.edad.$error.number:  {{miFormulario.edad.$error.number}}
+           <br>
+           miFormulario.edad.$error.min:  {{miFormulario.edad.$error.min}}
+           <br>
+           miFormulario.edad.$error.max:  {{miFormulario.edad.$error.max}}
+           <br>
+           miFormulario.sitioweb.$error.url:  {{miFormulario.sitioweb.$error.url}}
+
+    </div>
+
+
+</body>
+</html>

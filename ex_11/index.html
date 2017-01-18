@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html ng-app="myapp">
+  <head>
+      <meta charset="utf-8">
+
+    <script src="http://crypto-js.googlecode.com/svn/tags/3.1.2/build/rollups/md5.js"></script>
+    <script src="http://crypto-js.googlecode.com/svn/tags/3.1.2/build/rollups/sha1.js"></script>
+    <script src="http://crypto-js.googlecode.com/svn/tags/3.1.2/build/rollups/sha256.js"></script>
+    <script src="http://crypto-js.googlecode.com/svn/tags/3.1.2/build/rollups/sha512.js"></script>
+    <script src="http://crypto-js.googlecode.com/svn/tags/3.1.2/build/components/enc-base64-min.js"></script>
+    <script src="js/angular.min.js"></script>
+    <script src="app.js"></script>
+  </head>
+  <body>
+    <div ng-controller="MainController">
+        Contrase&ntilde;a:<input ng-model="password" />
+         <br>
+         El hash de la contrase&ntilde;a es:
+         <br>
+         {{getHash()}}
+    </div>
+  </body>
+</html>
