@@ -19,8 +19,16 @@ todoApp.config(['$routeProvider', '$locationProvider', 'localStorageServiceProvi
                 templateUrl: 'partials/add.html',
                 controller: 'AddController'
             })
+            .when('/edit/:task_id', {
+                templateUrl: 'partials/edit.html',
+                controller: 'EditController'
+            })
             .when('/insert/:titleTask', {
                 controller: 'InsertController',
+                template: ""
+            })
+            .when('/update/:titleTask/:task_id', {
+                controller: 'updateController',
                 template: ""
             });
 

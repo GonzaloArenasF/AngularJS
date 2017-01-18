@@ -10,6 +10,7 @@
 	<div class="col-md-4">TASK</div>
 	<div class="col-md-2">STATUS</div>
     <div class="col-md-1">OKAY?</div>
+    <div class="col-md-1">EDIT</div>
 </div>
 </strong>
 
@@ -19,9 +20,11 @@
 	<div class="col-md-1">{{ task.id }}</div>
 	<div class="col-md-4">{{ task.taskTitle }}</div>
 	<div class="col-md-2">{{ task.check | checkStatus}}</div>
-
     <div class="col-md-1" >
         <input ng-show="!task.showDisabled" type="checkbox"  ng-click="doneTask(task.id)" />
+    </div>
+    <div class="col-md-1">
+    	<button class="btn btn-warning" ng-click="editTaskButton(task.id);">Edit</button>
     </div>
 
 </div>
