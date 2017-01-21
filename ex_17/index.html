@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+  <meta charset="utf-8">
+
+  <title>Con bootstrap</title>
+
+  <!-- Bootstrap core CSS -->
+  <link href="css/bootstrap.min.css" rel="stylesheet">
+
+  <!-- JS -->
+  <script src="js/angular.min.js"></script>
+
+  <script src="app.js"></script>
+</head>
+
+<body ng-app="app">
+    <div ng-controller="MyCtrl">
+
+        <div class="alert alert-info" role="alert">$http llamadas anidadas</div>
+        <button class="btn btn-primary" type="button" ng-click="nestedTest()">
+          Ejecutar <span class="badge">{{combinedNestedResult.length}}</span>
+        </button>
+
+        <p> Result: <div ng-repeat="it in combinedNestedResult track by $index"><span class="label label-primary">{{it[0]}}</span></div></p>
+
+<hr>
+
+        <div class="alert alert-danger" role="alert">$q.all</div>
+
+        <button class="btn btn-danger" type="button" ng-click="allTest()">
+          Ejecutar <span class="badge">{{combinedResult.length}}</span>
+        </button>
+        <p> Result: <div ng-repeat="it in combinedResult track by $index"><span class="label label-danger">{{it[0]}}</span></div></p>
+
+<hr>
+<div class="alert alert-success" role="alert">Eventos - keydown</div>
+        <div class="form-group">
+           <input class="form-control"  ng-model="valorBusqueda" placeholder="Buscar..." ng-keydown="busquedaEspecial()">
+         </div>
+        <div ng-repeat="it in keywords track by $index"><span class="label label-success">{{it}}</span></div>
+
+    </div>
+</body>
+</html>

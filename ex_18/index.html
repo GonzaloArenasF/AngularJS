@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <!-- CSS (load bootstrap) -->
+    <link rel="stylesheet" href="bootstrap.min.css">
+    <style>
+        .navbar { border-radius:0; }
+    </style>
+    <script src="angular.min.js"></script>
+    <script src="angular-ui-router.js"></script>
+    <script src="app.js"></script>
+</head>
+
+<body ng-app="routerApp">
+    <!-- MENU -->
+    <nav class="navbar navbar-inverse" role="navigation">
+        <div class="navbar-header">
+            <a class="navbar-brand" ui-sref="#">AngularUI NAV</a>
+        </div>
+        <ul class="nav navbar-nav">
+            <li><a ui-sref="home">Inicio</a></li>
+            <li><a ui-sref="about">Nosotros</a></li>
+        </ul>
+    </nav>
+
+    <!-- CONTENT -->
+    <div class="container">
+        <!-- SIMILAR A NGROUTE ============================== -->
+        <div ui-view></div>
+        <div ui-view="otra"></div>
+    </div>
+</body>
+</html>

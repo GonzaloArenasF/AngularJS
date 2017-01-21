@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="myapp">
+<head>
+  <meta charset="utf-8">
+
+  <title>Con bootstrap</title>
+
+  <!-- Bootstrap core CSS -->
+  <link href="css/bootstrap.min.css" rel="stylesheet">
+
+  <!-- JS -->
+  <script src="js/angular.min.js"></script>
+  <script src="js/angular-resource.js"></script>
+  <script src="js/angular-route.min.js"></script>
+
+  <script src="app.js"></script>
+</head>
+
+<body>
+    <ul class="nav nav-pills navbar-inverse">
+      <li role="presentation" ><a href="#">Sin Resolve</a></li>
+      <li role="presentation"><a href="#mainFix">Con Resolve</a></li>
+    </ul>
+<div ng-view></div>
+
+
+</body>
+</html>

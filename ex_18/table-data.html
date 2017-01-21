@@ -1,0 +1,16 @@
+<h2>Nombres, Lista</h2>
+
+<table class="table table-hover table-striped table-bordered">
+    <thead>
+        <tr>
+            <td>Nombre</td>
+            <td>Costo</td>
+        </tr>
+    </thead>
+    <tbody>
+        <tr ng-repeat="it in nombres">
+            <td>{{ it.name }}</td>
+            <td>${{ it.price }}</td>
+        </tr>
+    </tbody>
+</table>

@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+    <!-- CSS (load bootstrap) -->
+    <link rel="stylesheet" href="bootstrap.min.css">
+
+    <style>
+        
+        div.datos {
+            margin: 2% auto auto auto;
+            width: 40%;
+        }
+
+    </style>
+
+    <script src="angular.min.js"></script>
+    <script src="angular-ui-router.js"></script>
+    <script src="app.js"></script>
+
+</head>
+
+<body ng-app="routerApp">
+    
+    <nav class="navbar navbar-inverse" role="navigation">
+        <ul class="nav navbar-nav">
+            <li><a ui-sref="sub1">Sub1</a></li>
+            <li><a ui-sref="sub2">Sub2</a></li>
+            <li><a ui-sref="sub3">Sub3</a></li>
+        </ul>
+    </nav>
+
+    <div ui-view></div>
+
+    
+</body>
+</html>

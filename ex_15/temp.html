@@ -1,0 +1,13 @@
+<table class="table">
+    <tr>
+      <th>Numero</th>
+      <th>Titulo</th>
+      <th>Usuario</th>
+    </tr>
+
+    <tr ng-repeat="it in issues | orderBy:'title':reverse">
+      <td>{{it.number}}</td>
+      <td>{{it.title | uppercase}}</td>
+      <td>{{it.user.login | lowercase }}</td>
+    </tr>
+  </table>

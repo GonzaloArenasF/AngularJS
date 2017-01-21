@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="myapp">
+<head>
+  <meta charset="utf-8">
+
+  <title>Routes</title>
+
+  <!-- Bootstrap core CSS -->
+  <link href="css/bootstrap.min.css" rel="stylesheet">
+
+  <!-- JS -->
+  <script src="js/angular.min.js"></script>
+  <script src="app.js"></script>
+</head>
+
+<body>
+
+    <div ng-init="friends = [
+      {name:'John', age:25, gender:'boy'},
+      {name:'Jessie', age:30, gender:'girl'},
+      {name:'Johanna', age:28, gender:'girl'},
+      {name:'Joy', age:15, gender:'girl'},
+      {name:'Mary', age:28, gender:'girl'},
+      {name:'Peter', age:95, gender:'boy'},
+      {name:'Sebastian', age:50, gender:'boy'},
+      {name:'Erika', age:27, gender:'girl'},
+      {name:'Patrick', age:40, gender:'boy'},
+      {name:'Samantha', age:60, gender:'girl'}
+    ]">
+      <h3>Arreglo: {{friends.length}} length:</h3>
+
+        <div class="list-group">
+        <div  ng-repeat="friend in friends" class="list-group-item">
+            <span ng-show="$first"><li>::::INICIO::::</li></span>
+            <li>[{{$index + 1}}] {{friend.name}}, {{friend.age}} años.</li>
+            <span ng-show="$last"><li>::::FIN::::</li></span>
+        </div>
+        <li ng-if="results.length == 0">
+          <strong>Sin resultados...</strong>
+        </li>
+    </div>
+    </div>
+
+</body>
+</html>

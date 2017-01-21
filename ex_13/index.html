@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="myapp">
+<head>
+  <meta charset="utf-8">
+
+  <title>Routes</title>
+
+  <!-- Bootstrap core CSS -->
+  <link href="css/bootstrap.min.css" rel="stylesheet">
+
+  <!-- JS -->
+  <script src="js/angular.min.js"></script>
+  <script src="js/angular-route.min.js"></script>
+  <script src="app.js"></script>
+</head>
+
+<body>
+
+    <div class="panel panel-default">
+      <div class="panel-body">
+        <div ng-view></div>
+      </div>
+      <div class="panel-footer">ejemplos: resolve/route/tempscript</div>
+    </div>
+
+    <script type="text/ng-template" id="/list.html">
+    <h4>Uso de resolve</h4>
+    <ul class="nav nav-pills navbar-inverse">
+      <li role="presentation" ><a href="#/detail/1">Ventana 1</a></li>
+      <li role="presentation"><a href="#/detail/2">Ventana 2</a></li>
+    </ul>
+    </script>
+    
+    <script type="text/ng-template" id="/detail.html">
+       <h4>Detalle N #{{data.id}}</h4><a ng-click="back()" class="btn">Volver!!</a>
+    </script>
+</body>
+</html>

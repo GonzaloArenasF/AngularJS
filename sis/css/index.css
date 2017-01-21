@@ -1,0 +1,9 @@
+div.login {
+	background-color: #eee;
+	border: 1px solid #ccc;
+	border-radius: 10px;
+	margin: 10% auto auto auto;
+	padding: 1%;
+	text-align: center;
+	width: 40%;
+}
