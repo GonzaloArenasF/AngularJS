@@ -1,0 +1,107 @@
+/**
+ *   Custom Input
+ */
+.cinput {
+    width:100%;
+    border-radius: 5px;
+    border: solid 1px #f1f1f1;
+    border: solid 1px @light-grey;
+    padding: 3px;
+    margin-bottom: 5px;
+    
+    label{
+      color:@medium-grey;
+      font-weight:100;
+    }
+
+    div {
+      margin: 0; 
+      padding: 0; 
+      color: @medium-dark-grey; 
+      font-size: 0.9em;
+    }
+    
+    input,textarea {
+      border: none; 
+      width: 100%; 
+      color: @medium-dark-grey;
+      font-weight: bold;
+      resize:none;
+    }
+
+    /**
+   *   disabled
+   */
+  &.disabled{
+    input,textarea {
+        background-color:inherit;
+        color:@medium-grey; 
+      }
+      .currency-sign span{
+        color:@medium-grey; 
+      }
+  }
+
+
+    /**
+   *   Custom Input has currency icon
+   */
+    .currency-sign{
+      position:relative;
+      margin:0;
+      span{
+        position:absolute;
+        color:@medium-dark-grey;
+        line-height:22px;
+      }
+      input{
+        padding-left:10px;
+      }
+    }
+
+  /**
+   *   Custom Input has image option
+   */
+    &.has-image{
+      position:relative;
+      img, .credit-card-icon{
+        position: absolute;
+        right: 5px;
+        top: 50%;
+        transform: translateY(-50%);
+      }
+    }
+
+
+    /**
+   *   Custom Input validation styles
+   */
+  input.ng-invalid,textarea.ng-invalid{
+    //background-color:lighten(@red,30%);
+  }
+    
+    .side-logo {
+        padding: 10px 0 10px 7px; 
+        border-left: 1px dotted;
+        margin-top: -27px;
+    }
+
+}
+
+/***** search field *****/
+.search-field{
+  width:100%;
+  border:1px solid @medium-grey;
+  padding:5px 20px;
+  .border-radius(5px);
+  margin-bottom:20px;
+  outline:0;
+  color:@dark-grey;
+  background-image: url('../assets/search_icon.png');
+    background-repeat: no-repeat;
+    background-position: 99% 6px;
+    background-size: 30px;
+}
+input:focus,textarea:focus{
+    outline: none;
+}

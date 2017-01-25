@@ -1,0 +1,199 @@
+#activity{
+
+	.box{
+		
+		
+		.box-header{
+			ul li{
+				//display:inline-block; 
+			}
+			.table-breadcrumb{
+				color:@dark-grey;
+				.primary{
+					color:@primary-light-blue;
+				}
+				.secondary{
+					color:@primary-dark-blue;
+					text-decoration:underline;
+				}
+			}
+		}
+
+
+
+		.box-body{
+			.cards{
+				.border-radius(5px);
+				.transition(all @transition-speed @transition-fn);
+				color:@dark-grey;
+				padding:5px 30px;
+				min-height:120px;
+				cursor:pointer;
+				background-repeat:no-repeat;
+				background-origin:content-box;
+				background-position:0 10px;
+				background-size:25px;
+				position:relative;
+
+
+				
+				&.hover-bg:hover,&.hover-bg.active{
+					background-color:@primary-dark-blue;
+					color:@white;
+					.text{
+						.title{
+							color:@white;
+						}
+					}
+				}
+
+				.text{
+					padding-left:30px;
+					.transition(all @transition-speed @transition-fn);
+					.title{
+						padding:5px;
+						color:@primary-light-blue;
+						font-weight:900;
+						margin-bottom:0;
+					}
+					.content-text{
+						font-size:12px;
+						margin:0;
+					}
+				}
+
+				&.card-title-all{
+					background-image:url('../assets/imageIcons/ico_balance_off.png'); 
+				}
+
+				//&.card-title-all.active,&.card-title-all:hover{
+				//	background-image:url('../assets/imageIcons/ico_balance_on.png');
+				//}
+
+				&.card-title-call{
+					background-image:url('../assets/imageIcons/ico_calls_off.png');
+				}
+
+				&.card-title-call.active,&.card-title-call:hover{
+					background-image:url('../assets/imageIcons/ico_calls_on.png');
+				}
+
+				&.card-title-data{
+					background-image:url('../assets/imageIcons/ico_data_low_off.png');
+					&.low{
+						background-image:url('../assets/imageIcons/ico_data_low_off.png');
+					}
+					&.med{
+						background-image:url('../assets/imageIcons/ico_data_med_off.png');
+					}
+					&.high{
+						background-image:url('../assets/imageIcons/ico_data_high_off.png');
+					}
+				}
+
+				&.card-title-data.active,&.card-title-data:hover{
+					background-image:url('../assets/imageIcons/ico_data_low_on.png');
+					&.low{
+						background-image:url('../assets/imageIcons/ico_data_low_on.png');
+					}
+					&.med{
+						background-image:url('../assets/imageIcons/ico_data_med_on.png');
+					}
+					&.high{
+						background-image:url('../assets/imageIcons/ico_data_high_on.png');
+					}
+				}
+
+				&.card-title-sms{
+					background-image:url('../assets/imageIcons/ico_sms_off.png');
+				}
+
+				&.card-title-sms.active,&.card-title-sms:hover{
+					background-image:url('../assets/imageIcons/ico_sms_on.png');
+				}
+
+				@media only screen and (max-width : @pad){
+					padding:5px;
+					background-image:none !important;
+					text-align:center;
+					border-radius:0;
+
+					.text{
+						padding:0;
+						.title{
+							color:@dark-grey;
+						}
+						.content{
+							font-size:10px;
+						}
+					}
+					&.total{
+						min-height:60px;
+					}
+
+					&.hover-bg{
+						border-bottom:1px solid @light-blue;
+						background-color:@responsive-table-bg-blue;
+					}
+
+					
+					&.hover-bg:hover,&.hover-bg.active{
+						background-color:@primary-light-blue;
+						color:inherit;
+						.text{
+							.title, .content{
+								color:@white;
+							}
+						}
+						&:after{
+							content: "";
+							width: 0;
+							height: 0;
+							border-left: 8px solid transparent;
+							border-right: 8px solid transparent;
+							border-top: 8px solid @primary-light-blue;
+							position: absolute;
+							.centerx();
+							bottom: -8px;
+						}
+					}
+				}
+			}
+		}
+
+		@media only screen and (max-width : @mobile){
+			.box-body{
+				.cards{
+					min-height:120px;
+				}
+			}
+		}
+	}
+}
+
+
+/********* responsive table page specific style ************/
+
+.responsive {
+
+    @media only screen and (max-width: @pad) {
+        td{
+            &.type-icon{
+                position:absolute;
+                top:10px;
+                left:10px;
+                width:20px;
+            }
+
+            &.flag-icon{
+                position:absolute;
+                top:10px;
+                right:10px;
+                font-size:20px;
+            }
+            .data-time{
+            	color:@medium-grey;
+            }
+        }
+    }
+}

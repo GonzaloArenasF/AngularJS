@@ -1,0 +1,56 @@
+.modal-body{
+	.control{
+		background: lighten(@secondary-teal, 60%);
+		padding: 10px;
+		.number-control {
+			padding: 0;
+
+			.selected {
+				color: black;
+			}
+
+			a {
+				color: darken(@light-grey, 50%);
+			}
+
+			li {
+				float: left;
+				list-style: none;
+
+				i {
+					display: block;
+					padding: 0px 20px;
+					cursor: pointer;
+					&:hover {
+						color: darken(@light-grey, 100%); 
+					}
+				}
+			}
+		}
+	}
+}
+
+.edit-pencil {
+	margin-top: -15px;
+	color: black;
+}
+
+/******** ANIMATION *********/
+
+/* The starting CSS styles for the enter animation */
+.number-buttons.ng-hide {
+	opacity: 0;
+	color: red;
+  	transform: translateX(-100%);
+}
+
+.number-buttons{
+	transition: 0.3s linear all;
+	opacity: 1;
+	transform: translateX(10px);
+	display: inline-block;
+}
+
+.number-buttons a{
+	margin-right: 20px;
+}

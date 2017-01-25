@@ -1,0 +1,38 @@
+.progress2 {
+    width: 100%;
+    animation-name: colorChange;
+    animation-duration: 10s;
+    animation-iteration-count: infinite;
+    text-align: center;
+    height: 100%;
+    opacity: 0.50;
+}
+
+@keyframes colorChange {
+    0% {
+        background: red;
+    }
+    20% {
+        background: blue;    
+    }
+    40% {
+        background: green;    
+    }
+    60% {
+        background: orange;    
+    }
+    80% {
+        background: purple;    
+    }
+    100% {
+        background: red;    
+    }
+}
+
+.navbar-header {
+    float: left;
+    padding: 15px;
+    text-align: center;
+    width: 100%;
+}
+.navbar-brand {float:none;}

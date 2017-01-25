@@ -1,0 +1,166 @@
+<!-- Left side column. contains the logo and sidebar -->
+<aside class="main-sidebar ">
+
+  <!-- sidebar: style can be found in sidebar.less -->
+  <section class="sidebar">
+    <!-- Sidebar user panel (optional) -->
+    <div class="user-panel">
+      <div class="pull-left image">
+        <img ng-src="{{imagePath}}imageIcons/data.png" class="img-rounded" alt="User Image">
+      </div>
+      <div class="pull-left info ">
+        <p class="wrapping">{{user.Nombre}}</p>
+      </div>
+    </div>
+
+    <!-- search form (Optional) -->
+    <form action="#" method="get" class="sidebar-form">
+      <div class="input-group">
+        <input type="text" name="q" class="form-control" placeholder="Buscar...">
+        <span class="input-group-btn">
+          <button type="submit" name="search" id="search-btn" class="btn btn-flat"><i class="fa fa-search"></i></button>
+        </span>
+      </div>
+    </form>
+    <!-- /.search form -->
+
+    <!-- Sidebar Menu -->
+ 
+<ul class="sidebar-menu">
+    <li class="header" style="color: #1ea9d4; 
+    font-size: 15px;"> Menu Principal </li>   
+    </li>
+   
+   <li><a href="" ui-sref="home.dashboard"><i class="fa fa-dashboard"></i><span>Dashboard</span></a></li>
+    <li><a href="" ui-sref="home.otro"><i class="fa fa-user"></i><span>Otro</span></a></li>
+</ul>
+
+<ul class="sidebar-menu">
+    <li class="header" style="color: #1ea9d4; 
+    font-size: 15px;"> Cuenta </li>   
+    </li>
+            
+    <li class="treeview">
+        <a href="">
+            <i class="fa fa-user"></i>
+            <span>Mi Cuenta</span>
+            <i class="fa fa-angle-left pull-right"></i>
+        </a>
+        <ul class="treeview-menu">
+            <li>
+                <a href=""  ><i class="fa fa-pencil text-aqua"></i>Modificar mis Datos</a>
+            </li>
+            <li>
+                <a href="" ><i class="fa fa-key text-aqua"></i>Cambiar Contraseña</a>
+            </li>
+        
+        </ul> 
+        
+    </li>
+</ul>
+
+
+
+<!--ul class="sidebar-menu">
+       <li class="treeview">
+                <a href="">
+                    <i class="fa fa-table"></i>
+                    <span>Mantenedor</span>
+                    <i class="fa fa-angle-left pull-right"></i>
+                </a>
+                <ul class="treeview-menu">
+                    <li>
+                        <a href="" ui-sref="mantenedor.usuarios" data-info="CU-06"><i class="fa fa-users text-aqua"></i>Usuarios</a>
+                    </li>
+                    <li>
+                        <a href="" ui-sref="mantenedor.roles" data-info="CU-06"><i class="fa fa-users text-aqua"></i>Roles</a>
+                    </li>
+                    <li>
+                        <a href="#" ui-sref="mantenedor.sostenedores" data-info="CU-03"><i class="fa fa-building text-aqua" ></i>Sostenedores o Empresas</a>
+                    </li>
+                    <li>
+                        <a href="#" ui-sref="mantenedor.establecimientos" data-info="CU-04"><i class="fa fa-institution text-aqua" ></i>Establecimientos</a>
+                    </li>
+                    <li>
+                        <a href="#" ui-sref="mantenedor.configestablecimientos" data-info="CU-04"><i class="fa fa-institution text-aqua" ></i>Configurar Establecimiento</a>
+                    </li>
+                    
+                    <li>
+                        <a href="#" ui-sref="mantenedor.docentes"><i class="fa fa-certificate text-aqua"></i>Registro Jefes/Docentes UTP</a>
+                    </li>
+
+                    <li>
+                        <a href="" ui-sref="mantenedor.cursos"><i class="fa fa-certificate text-aqua"></i> Cursos</a>
+                    </li>
+                  
+                    
+                </ul>
+
+            </li>
+          <li class="treeview">
+                <a href="">
+                    <i class="fa fa-graduation-cap"></i>
+                    <span>Alumnos</span>
+                    <i class="fa fa-angle-left pull-right"></i>
+                </a>
+                <ul class="treeview-menu"> 
+                   <li>
+                        <a href="" ui-sref="mantenedor.matriculas"><i class="fa fa-graduation-cap text-aqua"></i>Alumnos y Matricula</a>
+                    </li>
+                   
+                
+                </ul>
+            </li>
+
+            <li class="treeview">
+                <a href="">
+                    <i class="fa fa-gamepad"></i>
+                    <span>Juegos</span>
+                    <i class="fa fa-angle-left pull-right"></i>
+                </a>
+                <ul class="treeview-menu">
+                    <li>
+                        <a href="" ui-sref="mantenedor.gameapp" data-info="RF-04"><i class="fa fa-gamepad text-aqua"></i>Juegos y Aplicaciones</a>
+                    </li>
+                    <li>
+                        <a href="#" ui-sref="mantenedor.gamestage"  data-info="RF-06"><i class="fa fa-trophy text-aqua"></i>Juegos y Etapas</a>
+                    </li>
+                </ul>
+            </li>
+
+
+
+                
+            </li>
+            
+            <li class="treeview">
+                <a href="">
+                    <i class="fa fa-user"></i>
+                    <span>Mi Cuenta</span>
+                    <i class="fa fa-angle-left pull-right"></i>
+                </a>
+                <ul class="treeview-menu">
+                    <li>
+                        <a href=""  ui-sref="mantenedor.configmyaccount"><i class="fa fa-pencil text-aqua"></i>Modificar mis Datos</a>
+                    </li>
+                    <li>
+                        <a href="" ui-sref="mantenedor.configmypass"><i class="fa fa-key text-aqua"></i>Cambiar Contraseña</a>
+                    </li>
+                
+                </ul>
+                
+            </li>
+ 
+
+    
+
+    </ul-->
+    <ul class="sidebar-menu">
+        <li>
+            <a href="" ng-click="goOut()" class="text-red"><i class="fa fa-times-circle text-red"></i> Salir</a>
+        </li>
+
+    </ul>
+  </section>
+  <!-- /.sidebar -->
+</aside>

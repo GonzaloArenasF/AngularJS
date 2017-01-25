@@ -1,0 +1,19 @@
+
+
+<div class="form-group">
+   <input class="form-control"  ng-model="searchText" placeholder="Buscar...">
+   <label class="text-muted" >{{filtrados.length}} tips found</label>
+ </div>
+
+<div class="list-group">
+<div ng-repeat="module in filtrados = (modules | filter:searchText)"  class="list-group-item">
+<p class="pull-right" style="min-width:130px">&nbsp;
+<a class="linkextr" popover="{{module.tip}}" ng-if="module.tip"><i class="fa fa-3x fa-comment"></i></a>
+<a  target="_blank" href="{{module.src}}" ng-if="module.src"><i class="fa fa-3x fa-github"></i></a>
+<a target="_blank" href="{{module.home}}" ng-if="module.home"><i class="fa fa-3x fa-external-link"></i></a>
+
+</p>
+<h4 class="list-group-item-heading">{{module.name}}</h4>
+<p class="list-group-item-text text-muted">{{module.desc}}</p>
+</div>
+</div>

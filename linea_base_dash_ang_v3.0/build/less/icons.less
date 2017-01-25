@@ -1,0 +1,123 @@
+/*
+ * image icons
+ */
+
+@icon-size:20px;
+
+.image-icons{
+	width: @icon-size;
+    height: @icon-size;
+    position:relative;
+    &:before{
+    	position:absolute;
+    	left:0;
+    	top:0;
+	    background-size: @icon-size @icon-size;
+	    display: inline-block;
+	    width: @icon-size;
+	    height: @icon-size;
+	    content:"";
+    }
+}
+
+
+/*
+ * For activity page
+ */
+
+.incoming-call{
+	&:before{
+		background-image:url('../assets/imageIcons/icons_call_incoming.png');
+	}
+}
+
+.outgoing-call{
+	&:before{
+		background-image:url('../assets/imageIcons/icons_call_outgoing.png');
+	}
+}
+
+.longdistance-call{
+	&:before{
+		background-image:url('../assets/imageIcons/longDistance.png');
+	}
+}
+
+.longdistance-callback{
+	&:before{
+		background-image:url('../assets/imageIcons/icons_callback.png');
+	}
+}
+
+.data-low{
+	&:before{
+		background-image:url('../assets/imageIcons/ico_data_low.png');
+	}
+}
+
+.data-mid{
+	&:before{
+		background-image:url('../assets/imageIcons/ico_data_med.png');
+	}
+}
+
+.data-high{
+	&:before{
+		background-image:url('../assets/imageIcons/ico_data_high.png');
+	}
+}
+
+.sms-incoming{
+	&:before{
+		background-image:url('../assets/imageIcons/icons_sms_incoming.png');
+	}
+}
+
+.sms-outgoing{
+	&:before{
+		background-image:url('../assets/imageIcons/icons_sms_outgoing.png');
+	}
+}
+
+
+/*
+ * for location page
+ */
+
+.voice {
+	&:before{
+		background-image:url('../assets/imageIcons/voice.png');
+	}
+}
+
+.gprs {
+	&:before{
+		background-image:url('../assets/imageIcons/data.png');
+	}
+}
+
+
+/*
+ * credit card icon
+ */
+.visa {
+	&:before{
+		background-image:url('../assets/imageIcons/visa_24.png');
+	}
+}
+.mastercard {
+	&:before{
+		background-image:url('../assets/imageIcons/mastercard_24.png');
+	}
+}
+.americanexpress {
+	&:before{
+		background-image:url('../assets/imageIcons/american_express_24.png');
+	}
+}
+
+.kr.kr-wallet {
+
+		background-image:url('../assets/imageIcons/ico_balance_off.png');
+
+}

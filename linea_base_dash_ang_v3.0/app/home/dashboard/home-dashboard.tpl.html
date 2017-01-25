@@ -1,0 +1,71 @@
+
+
+<section class="content">
+<div class="box box-info box-solid">
+            <div class="box-header with-border">
+              <h3 class="box-title">Sistema General de Reportes</h3>
+
+              <div class="box-tools pull-right" >
+                <span style="float: left;"> <div style="width:100px"   dropdown-select="data['anios']" dropdown-model="data.anio" dropdown-item-label="k"  ></div></span>
+                <span style="float: left;padding-left: 10px;"> <div style="width:150px"   dropdown-select="data['meses']" dropdown-model="data.mes" dropdown-item-label="k"  ></div></span>
+               
+                <span style="float: left;padding-left: 10px;"><button class="btn btn-danger" ng-click="openNoteModal()" >Ver Popup</button></span>
+              </div> 
+            </div> 
+            <div class="box-body" style="background-color: #f8f8f8;">            
+                <div class="row">
+                    <div class="col-lg-6"> 
+                        <graph-pie-chart idcmp="container1" width="100" height="400" stitle="stitle['r1']" title="Eventos Plataforma " series="reports['r1']" colors="colors"></graph-pie-chart>
+                    </div> 
+                    <div class="col-lg-6">
+                         <graph-column idcmp="container2" width="100" height="400" stitle="stitle['r2']" title="Eventos Plataforma " series="reports['r2']" colors="colors"></graph-column>
+                    </div>
+                </div> 
+                <hr>
+                <div class="row">
+                    <div class="col-md-12">  
+                        <div responsive-table>
+                            <table class="database-datatable">
+                                <thead>
+                                    <tr>
+                                        <th  >USER ID</th>
+                                        <th  >ID</th>
+                                        <th  >TITLE</th>
+                                        <th  >OPCIONES</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr ng-repeat="it in data['posts']" ng-if="$index<=10" >
+                                        <!-- shows the data on desktop version -->
+                                        <td class="display-on-desktop">
+                                            <i class="fa fa-star fa-ystar" ng-show="$first||$last"></i>
+                                            <i class="fa fa-star-o" ng-show="$middle"></i>&nbsp;
+                                            {{it.userId}}
+                                        </td>
+                                        <td class="display-on-desktop">{{it.id}}</td>
+                                        <td class="display-on-desktop">
+                                            {{it.title}}
+                                        </td>
+                                        <td class="display-on-desktop">
+                                            
+                                        </td>
+
+
+                                        <!-- shows the data on mobile version -->
+                                        <td class="display-on-mobile"><strong>User:</strong> {{it.userId}}</td>
+                                        <td class="display-on-mobile"><strong>Id:</strong> {{it.id}}</td>
+                                        <td class="display-on-mobile"><strong>Title:</strong> {{it.title}}</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div> 
+                    </div> 
+                </div> 
+
+            </div>
+          </div>
+
+
+
+
+</section>

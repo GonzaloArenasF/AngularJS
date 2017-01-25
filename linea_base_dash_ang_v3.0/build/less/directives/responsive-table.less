@@ -1,0 +1,252 @@
+/* original: http://css-tricks.com/responsive-data-tables/ */
+
+/********* responsive general style ************/
+/******* find page specific style in each page's less file *******/
+
+.responsive {
+    width: 100%;
+    
+    table{
+        width: 100%;
+        border-collapse: collapse;
+    }
+
+
+    th{
+        //color:@white;
+        //background-color:@primary-light-blue;
+        .transition(all @transition-speed @transition-fn);
+        &[data-sort]:hover, &.active{
+            cursor:pointer;
+            //background-color:@primary-light-blue;
+        }
+        .header-wrapper{
+            i{
+                display:none;
+            }
+            &.sort{
+                .fa-sort{
+                    display:inline-block;
+                }
+            }
+            &.asc{
+                .fa-sort-asc{
+                    display:inline-block;
+                }
+            }
+            &.desc{
+                .fa-sort-desc{
+                    display:inline-block;
+                }
+            }
+        }
+    }
+
+    td,th{
+        padding:10px;
+    }
+
+    td{
+        &.display-on-desktop{
+            display:table-cell;
+        }
+        &.display-on-mobile{
+            display:none;
+        }
+        color:@medium-dark-grey;
+    }
+
+    tr{
+        border-bottom: 1px solid @gray;
+        &:nth-child(odd){
+            background-color:@white;
+        }
+        &:nth-child(even){
+            background-color:@white;
+        }
+
+        &:hover{
+            background-color:darken(@white,10%);
+        }
+    }
+
+
+    .filter-wrapper{
+        position:relative;
+        margin:20px auto;
+        padding-bottom:30px;
+        text-align:center;
+        display:none;
+
+        .filter-dropdown-current{
+            .centerx();
+            b{
+                pointer-events:none;
+            }
+        }
+        .filter-dropdown{
+            max-width:200px;
+            background-color:@primary-light-blue;
+            z-index:99;
+            color:@white;
+            .border-radius(5px);
+            width:100%;
+            min-width:200px;
+            .centerx();
+            top:0;
+            .transition(all @transition-speed @transition-fn);
+            visibility:hidden;
+            opacity:0;
+            pointer-events: none;
+
+            li{
+                .transition(all @transition-speed @transition-fn);
+                padding:10px 0;
+                cursor:pointer;
+                &:hover,&.active{
+                    background-color:@primary-light-blue;
+                }
+
+                b{
+                    pointer-events:none;
+                }
+            }
+
+            &.active{
+                visibility:visible;
+                opacity:1;
+                top:35px;
+                pointer-events: auto;
+                &:before{
+                    content:"";
+                    width: 0;
+                    height: 0;
+                    border-left: 5px solid transparent;
+                    border-right: 5px solid transparent;
+                    border-bottom: 8px solid @primary-light-blue;
+                    top: -8px;
+                    right: 0;
+                    .centerx();
+                }
+            }
+        }
+    }
+
+
+    @media only screen and (max-width: @pad) {
+
+        thead, tbody, tr, th {
+            display: block;
+        }
+
+        thead tr, th {
+            position: absolute;
+            top: -9999px;
+            left: -9999px;
+        }
+
+        .filter-wrapper{
+            display:block;
+        }
+
+        tr{
+            padding:10px 40px;
+            position:relative;
+            &:nth-child(odd){
+                background-color:@responsive-table-bg-blue;
+            }
+            &:nth-child(even){
+                background-color:@responsive-table-bg-grey;
+            }
+
+            &:nth-child(odd):hover{
+                background-color:darken(@responsive-table-bg-blue,10%);
+            }
+            &:nth-child(even):hover{
+                background-color:darken(@responsive-table-bg-grey,10%);
+            }
+        }
+
+        tr:before {
+        }
+
+        td{
+            &.display-on-desktop{
+                display:none;
+            }
+            &.display-on-mobile{
+                display:block;
+            }
+            border: none;
+            position: relative;
+            white-space: normal;
+            text-align: left;
+            color:inherit;
+
+            display: block;
+            -webkit-box-sizing: content-box;
+               -moz-box-sizing: content-box;
+                    box-sizing: content-box;
+            min-height: 1em;
+
+        }
+
+        td::before{
+            position: absolute;
+            left: 6px;
+            width: 45%;
+            padding-right: 10px;
+            -ms-word-wrap: break-word;
+                word-wrap: break-word;
+            text-align: left;
+            font-weight: bold;
+//content: attr(data-title);
+        }
+        
+        td.responsive-omit-title{
+            padding-left: 6px;
+        }
+
+        td.responsive-omit-title::before {
+            display: none;
+        }
+
+        td.responsive-omit-if-empty:empty {
+            display: none;
+        }
+
+        .pagination{
+            width:100%;
+            li{
+                display:block;
+                margin:0 20px;
+            }
+            .pagination-first, .pagination-page, .pagination-last{
+                display:none;
+            }
+            .pagination-prev,.pagination-next{
+                a{
+                    width:20%;
+                    background-color:@light-blue;
+                    min-width:100px;
+                    text-align:center;
+                    .transition(all @transition-speed @transition-fn);
+                    border:0;
+                    .border-radius(20px);
+                    color:@white;
+                    &:hover{
+                        background-color:@primary-light-blue;  
+                    }
+                }
+            }
+            .pagination-prev{
+                float:left;
+            }
+            .pagination-next{
+                float:right;
+            }
+        }
+    }
+
+}
+

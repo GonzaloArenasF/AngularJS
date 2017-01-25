@@ -1,0 +1,9 @@
+<div class="dropdownmenu-wrapper">
+	<div class="dropdownmenu" ng-click="toggleDateMenu($event)">{{datestring}}</div>
+
+	<ul class="dropdown-content">
+		<li ng-repeat="(dateString,dateRange) in dateTextMapping" ng-click="updateDateRange(dateRange)" ng-class="{'active':dateRange==daterange}">
+			{{dateString}}
+		</li>
+	</ul>
+</div>

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <!-- CSS (load bootstrap) -->
+    <link rel="stylesheet" href="bootstrap.min.css">
+    <style>
+        .navbar { border-radius:0; }
+        .btn {margin:2px;}
+    </style>
+    <script src="angular.min.js"></script>
+    <script src="angular-ui-router.js"></script>
+    <script src="app.js"></script>
+    <link rel="stylesheet" type="text/css" href="custom.css" media="screen" />
+
+</head>
+
+<body ng-app="routerApp" ng-controller="generalController">
+    <!-- MENU -->
+    <nav class="navbar navbar-inverse" role="navigation">
+        <div class="navbar-header"> 
+            <a class="navbar-brand" ui-sref="#">MAGIC WIZARD :)!</a>
+        </div>
+    </nav>
+
+    <!-- CONTENT -->
+
+    <div class="container" >
+        <!-- SIMILAR A NGROUTE ============================== -->
+        <div class="progress">
+            <div class="progress-bar progress-bar-striped active" role="progressbar" aria-valuenow="{{progress}}" aria-valuemin="0" aria-valuemax="100" style="width: {{progress}}%">
+                <span class="sr-only">{{progress}}% Complete</span>
+                <div class="progress2"></div>
+            </div>
+          </div>
+        </div>
+        <div ui-view></div>
+    </div>
+</body>
+</html>

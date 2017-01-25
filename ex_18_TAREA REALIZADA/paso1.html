@@ -1,0 +1,32 @@
+<div class="col-md-offset-3 col-md-6">
+	<div class="panel panel-primary">
+		<div class="panel-heading">
+			Paso 1
+		</div>
+		<div class="panel-body">
+		<form name="formPaso1" novalidate autocomplete="off">
+			<input type="text" ng-model="usuario.nombre" class="form-control " name="nombre" required placeholder="Nombre"  autofocus="" />
+			<br>
+	  		<input type="text" ng-model="usuario.apellido"  class="form-control " required name="apellido" placeholder="Apellido" required="" autofocus="" />
+	  		<br>
+	  		<select ng-model="usuario.sexo">
+				<option value="">- Seleccione Sexo -</option>
+				<option value="Masculino">Masculino</option>
+				<option value="Femenino">Femenino</option>
+	  		</select>
+	  		<hr>
+			<div class="clear"></div>
+	  		
+
+	  		<span class="alert alert-danger" ng-show="!formPaso1.$valid">
+				Los siguientes campos son necesarios: <b ng-show="!formPaso1.nombre.$valid">[Nombre]</b> <b ng-show="!formPaso1.apellido.$valid">[Apellido]</b>
+	  		</span>
+	  		<span class="alert alert-success" ng-show="formPaso1.$valid">
+				Formulario validado correctamente.
+	  		</span>
+	  		<button class="btn btn-primary pull-right" ng-click="Siguiente()" ng-disabled="!formPaso1.$valid">Siguiente</button>
+		</form>
+
+		</div>
+	</div>
+</div>

@@ -1,0 +1,104 @@
+/**
+* Common Elements in employee page
+*/
+
+.sub-top-nav {
+
+	background: white;
+
+	ul {
+		padding: 0;
+	}
+
+	li {
+		float: left;
+		list-style: none;
+	}
+
+	a {
+		display: block;
+		padding: 10px 15px;
+		cursor: pointer;
+	}
+
+	.sub-menu{
+		margin-top: 10px;
+	}
+
+	.top-bar-details{
+
+		//margin-bottom: 20px;
+
+		& div:first-child {
+			display:inline-block;
+		}
+
+		.top-tools{
+
+			margin-top: 10px;
+			display: inline-block;
+
+			.balance-option {
+				position: absolute;
+				z-index: 1;
+				border-radius: 5px;
+				background-color: @secondary-teal; 
+				padding: 15px;
+				right: 0;
+				display: none;
+				div {
+					margin-bottom: 5px;
+				}
+			}
+
+			//Tools Buttons
+			.btn-tool {
+			  /*padding: 5px;
+			  font-size: 12px;*/
+			  background: transparent;
+			  color: darken(@box-default-border-top-color, 20%);
+
+			  &.noactive:hover {
+			  	color: darken(@box-default-border-top-color, 20%);
+			  	cursor: default;
+			  }
+
+			  &:hover {
+			    color: black;
+			  }
+			  &.active{
+			  	color: black;
+			  }
+			}
+
+
+			.arrow {
+				cursor: pointer;
+			}
+
+			li{
+				border-right: 1px dotted grey;
+				margin-right: 20px;
+				padding-right: 20px;
+				text-align: center;
+
+				&:last-child{
+				
+					border: 0;
+					padding-right: 0;
+					margin: 0;
+					
+					.balance {
+						font-size: 22px;
+						color: @secondary-teal;
+					}
+				}
+			}
+
+			p {
+				margin: 0;
+			}
+		}
+	}
+
+}

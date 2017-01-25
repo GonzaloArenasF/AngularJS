@@ -1,0 +1,37 @@
+
+<div class="alert alert-success" role="alert">Ejemplo <b>$SCOPE</b> con "this" (Perdemos data-binding*). Debemos crear los watchers en el controller y manejar los eventos</div>
+
+<div class="panel panel-primary">
+  <div class="panel-heading">
+    Padre (ver app.js controllerAs)
+  </div>
+  <div class="panel-body">{{parentAs.awesomeThings}}</div>
+</div>
+<div ng-controller="AscontrollerCtrlChild01 as main">
+
+    <div class="panel panel-info">
+      <div class="panel-heading">
+        Hijo de parentAs (ver ascontroller.js)
+      </div>
+      <div class="panel-body">{{ main.awesomeThings }}</div>
+    </div>
+
+    <div ng-controller="AscontrollerCtrlSubChild01 as another">
+
+
+        <div class="panel panel-default">
+          <div class="panel-heading">
+            Hijo de main (ver ascontroller.js)
+          </div>
+          <div class="panel-body">{{ another.awesomeThings }}</div>
+        </div>
+    </div>
+    <div ng-controller="AscontrollerCtrlSubChild02 as yet">
+        <div class="panel panel-default">
+          <div class="panel-heading">
+            Hijo de main (ver ascontroller.js)
+          </div>
+          <div class="panel-body">{{ yet.awesomeThings }}</div>
+        </div>
+    </div>
+</div>

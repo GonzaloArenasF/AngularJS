@@ -1,0 +1,225 @@
+.employeeTabHeaderWrapper{
+	
+	position:relative;
+
+	#employeeTabHeader{
+		margin:20px 0;
+		width:100%;
+		display:table;
+	    table-layout: fixed;
+		li{
+			position:relative;
+			background-color:@primary-light-blue;
+			.transition(all @transition-speed @transition-fn);
+			color:#fff;
+			display:table-cell;
+			text-align:center;
+			&.active,&:hover{
+				background-color:@primary-light-blue;
+			}
+			&.active:after{
+				content:"";
+				width: 0; 
+				height: 0; 
+				border-left: 8px solid transparent;
+				border-right: 8px solid transparent;
+				border-bottom: 8px solid @white;
+				.centerx();
+				margin-top:-8px;
+				bottom:0;
+			}
+			a{	
+				padding:15px 0;
+				display:block;
+			}
+		}
+		
+	}
+
+	#employeeTabHeaderMobile{
+		display:none;
+		width:100%;
+		.border-radius(5px);
+		background-color:@white;
+		border:1px solid @light-grey;
+		padding:5px 10px;
+		margin:10px 0;
+		background-image: url("../assets/dropdownarrow.png");
+	    padding-right: 25px;
+	    background-repeat: no-repeat;
+	    background-position: right center;
+	    cursor:pointer;
+	    color:@medium-dark-grey;
+		@media only screen and (max-width : @mobile){
+			display:block;
+		}
+	}
+
+	#breadcrumb{
+		text-transform:capitalize;
+		a{
+			color:@primary-light-blue;
+		}
+		span{
+			color:@primary-light-blue;
+		}
+	}
+
+	#user-info{
+		display:table;
+		width:100%;
+		.info{
+			display:table-cell;
+			.name{
+				text-transform:capitalize;
+				color:@primary-light-blue;
+			}
+			.corporate{
+				color:@primary-light-blue;
+			}
+		}
+		.balance{
+			color:@light-blue;
+			display:table-cell;
+			text-align:right;
+			position:relative;
+			
+			.remaining-balance{
+				.transition(all @transition-speed @transition-fn);
+				&:hover{
+					color:@primary-light-blue;
+				}
+			}
+			
+			#balance-toggle{
+				cursor:pointer;
+			}
+
+			#balance-action{
+				background-color:@light-blue;
+				text-align:center;
+				.shadow();
+				.border-radius(5px);
+				position:absolute;
+				z-index:90;
+				width:100%;
+				max-width:200px;
+				display:none;
+				right:0;
+				
+				&:before{
+					content:"";
+					width: 0; 
+					height: 0; 
+					border-left: 10px solid transparent;
+					border-right: 10px solid transparent;
+					border-bottom: 12px solid @light-blue;
+					position:absolute;
+					top:-8px;
+					right:0;
+
+				}
+
+				li{
+					padding:10px 0;
+				}
+			}
+		}
+	}
+
+	@media only screen and (max-width : @pad){
+		
+		#employeeTabHeader{
+			font-size:10px;
+		}
+	}
+
+	@media only screen and (max-width : @mobile){
+		
+		#employeeTabHeader{
+			font-size:initial;
+			margin:0;
+			opacity:0;
+			visibility:hidden;
+			position:absolute;
+			top:20px;
+			left:0;
+			width:100%;
+			z-index:99;
+			.transition(all @transition-speed @transition-fn);
+            pointer-events: none;
+			li{
+				display:block;
+				width:100%;
+				&.active:after{
+					content:"";
+					border:0;
+				}
+
+				a{	
+					padding:10px 0;
+					display:block;
+				}
+			}
+
+			&.active{
+				opacity:1;
+				visibility:visible;
+				top:32px;
+            	pointer-events: auto;
+			}
+		}
+
+		#employeeTabHeaderMobile{
+			display:block;
+		}
+
+		#user-info{
+			h1{
+				font-size:26px;
+			}
+			h4{
+				font-size:18px;
+			}
+		}
+
+		#breadcrumb{
+			display:none;
+		}
+	}
+
+}
+
+/*
+ * Top up modal style
+ */
+#top-up-modal{
+	#credit-card-summary{
+		display:none
+	}
+	.total_amount{
+		margin:10px 0 15px 0;
+		p{
+			margin:0;
+	    	font-size: 1em;
+			color:@medium-dark-grey;
+		}
+		h3{
+			font-size:1.2em;
+			margin:0;
+			color:@light-blue;
+		}
+	}
+}
+
+
+/*
+ * add credit card modal style
+ */
+
+#add-credit-card{
+	#card-container{
+		margin:20px 0;
+	}
+}
+

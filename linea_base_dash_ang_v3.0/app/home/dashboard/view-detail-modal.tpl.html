@@ -1,0 +1,28 @@
+<div class="modal-header {{controlSelected.cli? 'modal-header-gray': ''}} {{sdata.estado=='w'? 'modal-header-yellow': ''}}">
+    <h5 class="modal-title text-center">Detalle: {{sdata.select.NOMBRE}}</h5>
+</div>
+<div class="modal-body"  >
+    <div class="control clearfix text-muted">
+        <span><b>Controles</b></span>
+        <ul class="number-control">
+            <li><a ng-click="updateControls(customerID, 'sms')"><i class="fa fa-qrcode" title="" style="font-size:27px"></i></a></li>
+            <li><a ng-click="updateControls(customerID, 'sms')" ><i class="fa fa-photo" title="" style="font-size:27px"></i></a></li>
+             
+        </ul>
+    </div>
+    <table class="table table-striped table-condensed text-muted whirl duo">
+        <tr><td>RUN:</td><td>{{personDetails.countryName}}</td></tr>
+        <tr><td>Nombre Completo:</td><td>{{personDetails.payerId}}</td></tr>
+        <tr><td>Unidad:</td><td>{{personDetails.purchaseDate}}</td></tr>
+        <tr><td>Arma:</td><td>{{personDetails.processedDate}}</td></tr>
+        <tr><td>Categoria:</td><td>{{personDetails.endDate | novalue}}</td></tr>
+        <tr><td>Telefono:</td><td>{{personDetails.removalDate | novalue}}</td></tr>
+        <tr><td>Fecha Nacimiento:</td><td>{{personDetails.isFree}}</td></tr>
+        <tr><td>Especialidad:</td><td>{{personDetails.chargeDate}}</td></tr>
+        <tr><td>Estado Civil:</td><td>{{personDetails.billingCycle}}</td></tr>
+    </table>
+</div>
+<div class="modal-footer noanimate">
+    <button class="btn btn-danger btn-xsrefund-btn pull-left" type="button" ng-click="cancel()">CERRAR</button>
+
+</div>

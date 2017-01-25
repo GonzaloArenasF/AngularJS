@@ -1,0 +1,29 @@
+<div>
+	<h1>Datos resumen</h1>
+	<table class="table table-striped">
+	<tr>
+		<td>Nombre</td><td>{{datosUsuario.nombre | esValido}}</td>
+	</tr>
+	<tr>
+		<td>Apellido</td><td>{{datosUsuario.apellido | esValido}}</td>
+	</tr>
+	<tr>
+		<td>Sexo</td><td>{{(datosUsuario.sexo | esValido)}}</td>
+	</tr>
+	<tr>
+		<td>Universidad</td><td>{{datosUsuario.universidad | esValido}}</td>
+	</tr>
+	<tr>
+		<td>Contacto</td><td>{{datosUsuario.contacto | esValido}}</td>
+	</tr>
+	<tr>
+		<td>Militar</td><td>{{datosUsuario.militar == true ? 'Realizado' : 'No Informado'}}</td>
+	</tr>
+	<tr>
+		<td>Edad</td><td>{{datosUsuario.edad | esValido}}</td>
+	</tr>
+	</table>
+</div>
+
+
+ 

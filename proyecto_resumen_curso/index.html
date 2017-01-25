@@ -1,0 +1,149 @@
+<!doctype html>
+<html class="no-js">
+  <head>
+    <meta charset="utf-8">
+    <title>Modules & More</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width">
+    <meta http-equiv="expires" content="Mon, 26 Jul 1997 05:00:00 GMT"/>
+    <meta http-equiv="pragma" content="no-cache" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta name="description" content="Los mejores productos de farmacia">
+    <link href='images/favicon.png' rel='icon' type='image/png'>
+    <meta name="robots" content="index, follow" />
+    <meta name="keywords" content="farmacia, drugstore, alcohol, aspirin, Walgreens, Plexion, Wintergreen" />
+
+    <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
+    <!-- build:css(.) styles/vendor.css -->
+    <!-- bower:css -->
+    <link rel="stylesheet" href="libs/slick.js/slick/slick.css" />
+    <link rel="stylesheet" href="libs/slick.js/slick/slick-theme.css" />
+    <link rel="stylesheet" href="libs/highlightjs/styles/default.css" />
+    <link rel="stylesheet" href="libs/font-awesome/css/font-awesome.css" />
+    <link rel="stylesheet" href="libs/angular-material/angular-material.css" />
+    <!-- endbower -->
+    <!-- endbuild -->
+    <!-- build:css(.tmp) styles/main.css -->
+    <link rel="stylesheet" href="styles/main.css">
+    <!-- endbuild -->
+
+  </head>
+  <body ng-app="wchileformaApp" data-status="{{ status }}">
+    <!--[if lt IE 7]>
+      <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+    <![endif]-->
+
+    <!-- Add your site or application content here -->
+    <div class="header">
+      <div class="navbar navbar-inverse" role="navigation">
+          <div class="navbar-header">
+
+              <a href="#/" class="navbar-brand" style="padding: 6px">
+                  <img src="images/logo.png" border="0" height="100%">
+              </a>
+          </div>
+
+          <div class="collapse navbar-collapse" id="js-navbar-collapse">
+            <ul class="nav navbar-nav navbar-right">
+                <li><a href="#/amaterial">Angular Material</a></li>
+                <li><a href="#/textover">Text Plus+Plus</a></li>
+                <li><a href="#/texsearch">Instant Search</a></li>
+                <li><a href="#/main">Listado Inteligente</a></li>
+                <li class="dropdown">
+                    <a href="" class="dropdown-toggle" data-toggle="dropdown" style="width:150px">Más <b class="caret"></b></a>
+                    <ul class="dropdown-menu" style="margin-top: 0px;">
+                        <li><a href="#/pagination">Smart-Table</a></li>
+                        <li><a href="#/directivas">Directive</a></li>
+                        <li><a href="#/echart">Chart</a></li>
+                        <li><a href="#/livecode">Live Code</a></li>
+                    </ul>
+                </li>
+            </ul>
+          </div>
+      </div>
+    </div>
+
+    <div class="row" style="padding:20px">
+        <div class="col-sm-8" ng-view=""></div>
+        <div class="clearfix visible-xs-block"></div>
+        <div class="col-sm-4" ng-controller="ElementCtrl">
+            <div hljs="" source="codeInside" language="javascript"></div>
+        </div>
+    </div>
+
+    <div class="footer">
+    </div>
+
+
+    <!-- Google Analytics: change UA-XXXXX-X to be your site's ID -->
+    <script>
+        (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+        (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+        m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+        })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+        ga('create', 'UA-50869607-1', 'url.cl');
+        ga('send', 'pageview');
+    </script>
+    <!-- build:js(.) scripts/vendor.js -->
+    <!-- bower:js -->
+    <script src="libs/jquery/dist/jquery.js"></script>
+    <script src="libs/angular/angular.js"></script>
+    <script src="libs/bootstrap-sass-official/assets/javascripts/bootstrap.js"></script>
+    <script src="libs/angular-animate/angular-animate.js"></script>
+    <script src="libs/angular-aria/angular-aria.js"></script>
+    <script src="libs/angular-cookies/angular-cookies.js"></script>
+    <script src="libs/angular-messages/angular-messages.js"></script>
+    <script src="libs/angular-resource/angular-resource.js"></script>
+    <script src="libs/angular-route/angular-route.js"></script>
+    <script src="libs/angular-sanitize/angular-sanitize.js"></script>
+    <script src="libs/angular-touch/angular-touch.js"></script>
+    <script src="libs/slick.js/slick/slick.min.js"></script>
+    <script src="libs/ngInfiniteScroll/build/ng-infinite-scroll.js"></script>
+    <script src="libs/highcharts-release/highcharts.js"></script>
+    <script src="libs/highcharts-release/highcharts-more.js"></script>
+    <script src="libs/highcharts-release/modules/exporting.js"></script>
+    <script src="libs/highlightjs/highlight.pack.js"></script>
+    <script src="libs/angular-highlightjs/build/angular-highlightjs.js"></script>
+    <script src="libs/angular-bootstrap/ui-bootstrap-tpls.js"></script>
+    <script src="libs/angular-smart-table/dist/smart-table.js"></script>
+    <script src="libs/angular-material/angular-material.js"></script>
+    <!-- endbower -->
+    <!-- endbuild -->
+
+    <!-- build:js({.tmp,app}) scripts/scripts.js -->
+    <script src="scripts/app.js"></script>
+    <script src="scripts/controllers/main.js"></script>
+    <script src="scripts/controllers/about.js"></script>
+    <script src="scripts/services/generalservice.js"></script>
+    <script src="scripts/services/parseutilidades.js"></script>
+    <script src="scripts/controllers/producto.js"></script>
+    <script src="scripts/controllers/livecode.js"></script>
+    <script src="scripts/controllers/textover.js"></script>
+    <script src="scripts/directives/hcpie.js"></script>
+    <script src="scripts/directives/wordundercursor.js"></script>
+    <script src="scripts/filters/showtext.js"></script>
+    <script src="scripts/directives/highlight.js"></script>
+    <script src="scripts/controllers/texsearch.js"></script>
+    <script src="scripts/controllers/home.js"></script>
+    <script src="scripts/controllers/ascontroller.js"></script>
+    <script src="scripts/controllers/element.js"></script>
+    <script src="scripts/controllers/pagination.js"></script>
+    <script src="scripts/directives/nghtemplatedir.js"></script>
+    <script src="scripts/directives/nghtemplateurldir.js"></script>
+    <script src="scripts/controllers/directivas.js"></script>
+    <script src="scripts/directives/nghreplacedir.js"></script>
+    <script src="scripts/directives/elementdir.js"></script>
+    <script src="scripts/directives/attributedir.js"></script>
+    <script src="scripts/directives/withcontrol.js"></script>
+    <script src="scripts/directives/withattrs.js"></script>
+    <script src="scripts/directives/harea.js"></script>
+    <script src="scripts/controllers/echart.js"></script>
+    <script src="scripts/directives/gethtml.js"></script>
+    <script src="scripts/controllers/amaterial.js"></script>
+    <!-- endbuild -->
+
+
+
+</body>
+</html>

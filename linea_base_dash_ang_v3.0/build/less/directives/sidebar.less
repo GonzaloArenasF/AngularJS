@@ -1,0 +1,136 @@
+#mainNavMobile{
+	position:absolute;
+	top:0;
+	left:0;
+	width:100%;
+	background-color:@primary-light-blue;
+	padding:5px 20px;
+	overflow:hidden;
+	display:none;
+
+	span{
+		color:@white;
+		padding:5px;
+		width:30px;
+		font-size:20px;
+		text-align:center;
+		cursor:pointer;
+		.transition(all @transition-speed @transition-fn);
+	}
+
+	#menu-control{
+		.border-radius(20px);
+		background-color:@dark-blue;
+		float:left;
+		&:hover{
+			background-color:lighten(@dark-blue,20%);
+		}
+	}
+
+	#toggle-control{
+		.border-radius(5px);
+		background-color:@primary-light-blue;
+		float:right;
+		&:hover{
+			background-color:lighten(@primary-light-blue,20%);
+		}
+	}
+
+	@media only screen and (max-width : @mobile){
+		display:block;
+		.transition(all @transition-speed @transition-fn);
+		&.left-panel-active{
+			left:@main-panel-left-padding;
+
+			&:before{
+				content:"";
+				width: 0; 
+				height: 0; 
+				border-top: 8px solid transparent;
+				border-bottom: 8px solid transparent;
+				border-left: 10px solid @dark-blue;
+				.border-radius(0);
+				.centery();
+				left:0;
+				margin-left:0px;
+			}
+		}
+
+		&.right-panel-active{
+			left:-@main-panel-left-padding;
+
+			&:after{
+				content:"";
+				width: 0; 
+				height: 0; 
+				border-top: 8px solid transparent;
+				border-bottom: 8px solid transparent;
+				border-right: 10px solid darken(@primary-light-blue,20%);
+				.border-radius(0);
+				.centery();
+				right:0;
+				margin-right:0px;
+			}
+		}
+	}
+}
+
+
+#mainNav{
+	position:fixed;
+	top:0;
+	left:0;
+	height:100%;
+	width:@main-panel-left-padding;
+	background-color:@dark-blue;
+	color:@white;
+	z-index:999;
+
+	.logo{
+		width:100%;
+		padding:25px;
+	}
+
+	ul{
+		li{
+			a{
+				display:block;
+				padding: 10px 25px;
+				color:@primary-light-blue;
+				.transition(all @transition-speed @transition-fn);
+				&:hover{
+					color:@white;
+				}
+			}
+		}
+	}
+
+	@media only screen and (max-width : @mobile){
+		left:-@main-panel-left-padding;
+		.transition(all @transition-speed @transition-fn);
+		&.left-panel-active{
+			left:0;
+		}
+	}
+}
+
+
+#controlNav{
+	position:fixed;
+	top:0;
+	right:-@main-panel-left-padding;
+	height:100%;
+	width:@main-panel-left-padding;
+	background-color:darken(@primary-light-blue,20%);
+	color:@white;
+	z-index:9999;
+
+
+	@media only screen and (max-width : @mobile){
+		right:-@main-panel-left-padding;
+		.transition(all @transition-speed @transition-fn);
+		&.right-panel-active{
+			right:0;
+		}
+	}
+}

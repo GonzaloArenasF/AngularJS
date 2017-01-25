@@ -1,0 +1,47 @@
+<div class="container lead">
+    <h4>Productos Vigentes</h4>
+    <p class="lead" style="text-justify: justify;
+    text-align: justify;font-size: 16px"><small>Productos reconocidos por el Ministerio de Salud.
+    </small></p>
+    <form>
+      <div class="form-group">
+        <div class="input-group">
+          <div class="input-group-addon"><i class="fa fa-search"></i></div>
+
+          <input type="text" class="form-control" ng-minlength="3" placeholder="Search Item" ng-model="searchItem">
+
+        </div>
+      </div>
+    </form>
+    <div hc-pie="" height="50" items="limitedIdeas"></div>
+</div>
+
+<div infinite-scroll="verMas()" infinite-scroll-distance="2">
+    <!-- Scale up-->
+    <div class="row" style="padding-left:30px">
+    <div ng-repeat="item in lista | filter:{name: searchItem} track by item.id">
+
+        <div class="col-xs-3 col-min">
+            <!-- colored -->
+            <div class="ih-item square colored effect8 scale_up"><a href="#/producto/detalle/{{$index}}">
+                <div class="img row-curso">
+                    <span class="label label-warning overtext" ng-bind="::item.ncode"></span>
+                    <img style="height:130px" ng-src="{{'images/country/'+item.country+'.png'}}" alt="img">
+
+                    <div class="progress">
+                      <div class="progress-bar progress-bar-success progress-bar-striped active" role="progressbar" style="width: 100%">
+                        <span ng-bind="::item.name | lowercase | showtext:22"></span>
+                      </div>
+                    </div>
+                </div>
+                <div class="info">
+                  <h3 ng-bind="::item.cost | currency:undefined:0"></h3>
+                  <p ng-bind="::item.description"></p>
+                </div></a>
+            </div>
+            <!-- end colored -->
+        </div>
+    </div>
+    </div>
+    <!-- end Scale up-->
+</div>

@@ -1,0 +1,19 @@
+<form id="formId">
+<div class="form-group">
+   <label for="exampleInputEmail1">Input Ejemplo</label>
+   <input type="text" class="form-control" ng-model="model.palabrasv01"></input>
+ </div>
+ <div class="form-group">
+   <label for="exampleInputEmail1">Caja de texto</label>
+   <textarea ng-class="otra" class="form-control" ng-model="model.palabrasv02" rows="4"></textarea>
+ </div>
+</form>
+
+<p word-under-cursor="model.word" word-under-cursor-content="'Change a few things up and try...'" class="text-primary"></p>
+<p word-under-cursor="model.word" word-under-cursor-content="model.palabrasv01" class="text-primary"></p>
+<p word-under-cursor="model.word" word-under-cursor-content="model.palabrasv02" class="text-primary"></p>
+
+<div class="alert alert-warning" role="alert">
+    Selección: <span class="label label-primary">{{model.word}}</span>
+</div>
+<div get-html id="formId"></div>

@@ -1,0 +1,33 @@
+<p>Live Code.</p>
+<div class="row">
+  <div class="col-sm-4">
+    Nombre <input type="text" class="form-control" ng-model="name">
+  </div>
+  <div class="col-sm-4">
+    Trabajo <input type="text" class="form-control" ng-model="job">
+  </div>
+</div>
+<br>
+
+<div hljs="" include="'compile-me'" compile="true" language="json"></div>
+
+<div class="row">
+  <div class="col-sm-8">
+    Código <textarea class="form-control" ng-model="subSource" rows="5"></textarea>
+  </div>
+</div>
+<br>
+
+<div hljs source="subSource" language="javascript"></div>
+
+<script type="text/ng-template" id="compile-me">
+[
+  {
+    "name": "{{ name }}",
+    "job": "{{ job }}",
+    "data": [{},{}],
+    "b": true,
+    "n": 21
+  }
+]
+</script>
