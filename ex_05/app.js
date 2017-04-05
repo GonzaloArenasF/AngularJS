@@ -34,13 +34,6 @@ myApp.service("getPosts", function($http, servicio) {
     Controller del SUB1 - Posts
  */
 myApp.controller("controllerSub1", function ($scope, getPosts) {
-
-    /*$http.get("https://jsonplaceholder.typicode.com/posts")
-        .then(function(response) {
-            console.debug(response);
-            $scope.posts = response.data;
-    });*/
-
     
     getPosts.getServicio("https://jsonplaceholder.typicode.com/posts")
         .then (function(res) {
